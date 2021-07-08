@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-struct Item: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct Item: Identifiable {
+    var id = UUID().uuidString
+    var name: String
+    var price: String
+    var image: String
 }
 
-struct Item_Previews: PreviewProvider {
-    static var previews: some View {
-        Item()
-    }
-}
+var items = [
+    Item(name: "Meat Salad", price: "$6.50", image: "p1"),
+    Item(name: "Chicken Salad", price: "$20.60", image: "p3"),
+    Item(name: "Greeek Salad", price: "$3.52", image: "p2")
+]
